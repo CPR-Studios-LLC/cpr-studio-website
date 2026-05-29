@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassMail - Email on Your Smart Glasses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .glassmail-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .glassmail-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .glassmail-hero .tagline {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        .data-section {
+            background: #f0f4f8;
+            padding: 3rem 0;
+            margin: 3rem 0;
+        }
+        .data-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .data-list {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .data-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .data-list li:last-child {
+            border-bottom: none;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .cta-button:hover {
+            opacity: 0.9;
+        }
+        .compatibility {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">CPR Studio</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#apps">Our Apps</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="glassmail-hero">
+            <div class="container">
+                <h1>📧 GlassMail</h1>
+                <p class="tagline">Read and reply to emails from your smart glasses</p>
+                <p>AI-powered email management for Even Realities G2 glasses</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 3rem 0;">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Stay Connected, Hands-Free</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto; color: #666;">
+                GlassMail brings your Gmail inbox to your Even Realities G2 smart glasses. 
+                Read emails at a glance, generate AI-powered replies, and send responses — 
+                all without reaching for your phone.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📬 Inbox at a Glance</h3>
+                    <p>See your latest emails displayed right in your field of view. Swipe to navigate, tap to read.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 AI-Powered Replies</h3>
+                    <p>Generate smart, contextual responses with a single tap. Customize with your own rules and preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎤 Voice Context</h3>
+                    <p>Add specific details by speaking. The AI incorporates your voice input into the perfect reply.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>✉️ Tap to Send</h3>
+                    <p>Review the AI-generated draft, then send instantly. Stay responsive without breaking your flow.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <div class="container">
+                <h2>Your Privacy Matters</h2>
+                <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: #666;">
+                    GlassMail connects to your Gmail account to provide email functionality. Here's what we access and why:
+                </p>
+                <ul class="data-list">
+                    <li><strong>Read emails:</strong> To display your inbox and email content on your glasses</li>
+                    <li><strong>Send emails:</strong> To send replies you compose and approve</li>
+                    <li><strong>Email metadata:</strong> Sender names, subjects, and dates for display</li>
+                </ul>
+                <p style="text-align: center; margin-top: 2rem; color: #666;">
+                    We never store your emails on our servers. All email data stays between you and Google.<br>
+                    <a href="privacy.html" style="color: #667eea;">Read our full Privacy Policy →</a>
+                </p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Get Started</h2>
+                <p style="margin-bottom: 2rem; color: #666;">Available now for Even Realities G2 smart glasses</p>
+                <p class="compatibility">Compatible with Gmail accounts • Requires Even Realities G2 glasses and EvenHub app</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Support</h2>
+                <p>Questions about GlassMail? We're here to help.</p>
+                <a href="mailto:support@cprstudios.com" class="email-link">support@cprstudios.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CPR Studio. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
