@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassMail Setup — Sign in with an App Password</title>
+    <meta name="description" content="How to connect Gmail to GlassMail with a Google App Password, and how we protect your email.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .setup-hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 64px 0; text-align: center; }
+        .setup-hero h1 { font-size: 2.5rem; margin-bottom: .75rem; }
+        .setup-hero p { font-size: 1.15rem; opacity: .92; max-width: 660px; margin: 0 auto; }
+        .info-section { padding: 3rem 0; }
+        .info-section h2 { margin-bottom: 1rem; }
+        .info-section p.lead { color: #555; max-width: 740px; }
+        .data-section { background: #f0f4f8; padding: 3rem 0; }
+        .privacy-list { max-width: 740px; list-style: none; padding: 0; }
+        .privacy-list li { padding: .7rem 0; border-bottom: 1px solid #e3e8ee; color: #444; }
+        .privacy-list li:last-child { border-bottom: none; }
+        .steps { counter-reset: step; max-width: 720px; margin: 1.5rem auto 0; }
+        .step { position: relative; padding: 1.25rem 0 1.5rem 3.25rem; border-bottom: 1px solid #eee; }
+        .step:last-child { border-bottom: none; }
+        .step::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 1.2rem; width: 2.25rem; height: 2.25rem; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+        .step h3 { margin-bottom: .35rem; font-size: 1.1rem; }
+        .step p { color: #555; }
+        .step img { display: block; margin-top: 1rem; max-width: 270px; width: 100%; border-radius: 14px; border: 1px solid #e2e2e2; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+        .note { background: #fff8e6; border: 1px solid #f3e0a6; border-radius: 10px; padding: 1rem 1.25rem; color: #6b5b1f; max-width: 720px; margin: 1.5rem auto 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">CPR Studio</a>
+            <ul class="nav-links">
+                <li><a href="../glassmail.html">GlassMail</a></li>
+                <li><a href="../privacy.html">Privacy Policy</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="setup-hero">
+            <div class="container">
+                <h1>GlassMail Setup</h1>
+                <p>Connect your Gmail to GlassMail with a Google <strong>App Password</strong> — a secure, revocable key you create inside your own Google account.</p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="container">
+                <h2>Why an App Password instead of "Sign in with Google"?</h2>
+                <p class="lead">
+                    Apps that read Gmail must pass Google's full OAuth verification — a lengthy security review. While we
+                    complete that process, GlassMail uses a Google <strong>App Password</strong>: a feature built into your
+                    Google account that lets you grant one specific app access to your mail <em>without ever sharing your
+                    main password</em>. You stay in control — you can revoke GlassMail's access at any time by deleting the
+                    App Password, and it can't be used to change your account or your password.
+                </p>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <div class="container">
+                <h2>How we protect your email</h2>
+                <ul class="privacy-list">
+                    <li><strong>We never read your email.</strong> Your messages are fetched only to display them on your glasses — no one at CPR Studios reviews them.</li>
+                    <li><strong>Your App Password is encrypted</strong> at rest on our servers, and is used only to fetch and send your mail on your behalf.</li>
+                    <li><strong>We don't store your emails</strong> on our servers, and we never sell your data or use it for advertising or AI training.</li>
+                    <li><strong>AI replies are on-demand.</strong> Only the single email you choose to reply to is sent to our AI provider, and only when you tap to generate a draft.</li>
+                    <li><strong>You're in control.</strong> Revoke access anytime by deleting the GlassMail App Password in your Google account.</li>
+                </ul>
+                <p style="margin-top: 1.5rem;"><a href="../privacy.html" style="color: #667eea;">Read our full Privacy Policy →</a></p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="container">
+                <h2>Create your App Password</h2>
+                <p class="lead">It takes about a minute. You'll need 2-Step Verification turned on — Google requires it before it will let you create an App Password.</p>
+                <div class="steps">
+                    <div class="step">
+                        <h3>Go to your Google Account</h3>
+                        <p>Open <strong>myaccount.google.com</strong> in your browser and sign in if prompted.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Open "Security &amp; sign-in"</h3>
+                        <p>Tap <strong>Security &amp; sign-in</strong>.</p>
+                        <img src="img/security.jpg" alt="Google Account page with Security and sign-in highlighted">
+                    </div>
+                    <div class="step">
+                        <h3>Open "2-Step Verification"</h3>
+                        <p>Under "How you sign in to Google," tap <strong>2-Step Verification</strong>.</p>
+                        <img src="img/two-step.jpg" alt="Security page with 2-Step Verification highlighted">
+                    </div>
+                    <div class="step">
+                        <h3>Turn on 2-Step Verification</h3>
+                        <p>If it isn't already on, enable it and follow Google's prompts. If it's already on, just continue.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Find "App passwords"</h3>
+                        <p>Scroll to the bottom of the 2-Step Verification page and tap <strong>App passwords</strong>.</p>
+                        <img src="img/app-passwords.jpg" alt="2-Step Verification page with App passwords highlighted">
+                    </div>
+                    <div class="step">
+                        <h3>Name it "GlassMail" and tap Create</h3>
+                        <p>Type <strong>GlassMail</strong> in the "App name" field, then tap <strong>Create</strong>.</p>
+                        <img src="img/create.jpg" alt="App passwords page with the name GlassMail entered and Create button">
+                    </div>
+                    <div class="step">
+                        <h3>Copy the App Password</h3>
+                        <p>Google shows a 16-character password. <strong>Copy it now</strong> — you won't be able to see it again.</p>
+                        <img src="img/generated.jpg" alt="Generated app password dialog">
+                    </div>
+                    <div class="step">
+                        <h3>Enter it in GlassMail</h3>
+                        <p>Back in GlassMail, enter your email address and paste the App Password, then tap <strong>Connect</strong>.</p>
+                        <img src="img/connect.jpg" alt="GlassMail connect screen with email and app password entered">
+                    </div>
+                </div>
+                <div class="note">Tip: you can paste the password with or without spaces — they're only there for readability.</div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Need help?</h2>
+                <p>Questions about setup or how your data is handled? We're happy to help.</p>
+                <a href="mailto:support@cprstudios.com" class="email-link">support@cprstudios.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CPR Studio. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
