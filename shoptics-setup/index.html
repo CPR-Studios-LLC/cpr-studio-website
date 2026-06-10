@@ -107,7 +107,14 @@
                             <code>read_customers</code>
                             <code>write_draft_orders</code>
                         </div>
-                        <p style="margin-top:.6rem;">Then click <strong>Save</strong>. These let Shoptics read your sales numbers and create the draft orders you confirm — nothing more. It cannot touch payouts, settings, themes, or published orders.</p>
+                        <p style="margin-top:.6rem;">Then click <strong>Save</strong>. These let Shoptics read your sales numbers and create the draft orders you confirm — nothing more. It cannot touch payouts, settings, or themes.</p>
+                        <p style="margin-top:.9rem;"><strong>Optional — voice order actions.</strong> To also tag, fulfill, re-address, cancel, or refund existing orders by voice, additionally check:</p>
+                        <div class="scopes">
+                            <code>write_orders</code>
+                            <code>write_fulfillments</code>
+                            <code>read_merchant_managed_fulfillment_orders</code>
+                        </div>
+                        <p style="margin-top:.6rem;">Skip these and those actions simply won't be offered — everything else works. Every order action is shown on your glasses before it runs, and the risky ones (fulfill, address change, cancel, refund) require a <strong>second confirmation tap</strong> on top of that.</p>
                     </div>
                     <div class="step">
                         <h3>Install the app and reveal your token</h3>
@@ -139,6 +146,10 @@
                     <details>
                         <summary>"Shopify rejected that token"</summary>
                         <p>Usually a copy/paste miss — the token must start with <code>shpat_</code> and be copied in full. Reveal-once means a previously viewed token can't be re-copied; reinstall the custom app for a fresh one.</p>
+                    </details>
+                    <details>
+                        <summary>The agent says I haven't granted permission for an order action</summary>
+                        <p>Your token was created without the optional scopes. Open your custom app → <strong>Configuration</strong> → add <code>write_orders</code>, <code>write_fulfillments</code>, and <code>read_merchant_managed_fulfillment_orders</code>, save, reinstall the app for a fresh token, then reconnect in Shoptics with the new token.</p>
                     </details>
                     <details>
                         <summary>"Enter your .myshopify.com store domain"</summary>
