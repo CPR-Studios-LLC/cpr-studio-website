@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoptics Setup — Connect Your Shopify Store</title>
+    <meta name="description" content="How to connect your Shopify store to Shoptics with a custom app access token, and how we protect your store data.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .setup-hero { background: linear-gradient(135deg, #0a3d1c 0%, #14532d 55%, #166534 100%); color: white; padding: 64px 0; text-align: center; }
+        .setup-hero h1 { font-size: 2.5rem; margin-bottom: .75rem; }
+        .setup-hero p { font-size: 1.15rem; opacity: .92; max-width: 660px; margin: 0 auto; }
+        .info-section { padding: 3rem 0; }
+        .info-section h2 { margin-bottom: 1rem; }
+        .info-section p.lead { color: #555; max-width: 740px; }
+        .data-section { background: #f0f8f2; padding: 3rem 0; }
+        .privacy-list { max-width: 740px; list-style: none; padding: 0; }
+        .privacy-list li { padding: .7rem 0; border-bottom: 1px solid #dfeae2; color: #444; }
+        .privacy-list li:last-child { border-bottom: none; }
+        .steps { counter-reset: step; max-width: 720px; margin: 1.5rem auto 0; }
+        .step { position: relative; padding: 1.25rem 0 1.5rem 3.25rem; border-bottom: 1px solid #eee; }
+        .step:last-child { border-bottom: none; }
+        .step::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 1.2rem; width: 2.25rem; height: 2.25rem; background: linear-gradient(135deg, #16a34a, #166534); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+        .step h3 { margin-bottom: .35rem; font-size: 1.1rem; }
+        .step p { color: #555; }
+        .step code { background: #eef2f5; border: 1px solid #e0e6ea; border-radius: 6px; padding: .1rem .45rem; font-size: .92em; color: #14532d; }
+        .scopes { margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+        .scopes code { background: #ecfdf3; border-color: #bbe5c8; }
+        .note { background: #fff8e6; border: 1px solid #f3e0a6; border-radius: 10px; padding: 1rem 1.25rem; color: #6b5b1f; max-width: 720px; margin: 1.5rem auto 0; }
+        .trouble { max-width: 720px; margin: 1.25rem auto 0; }
+        .trouble details { border: 1px solid #e5e7eb; border-radius: 10px; padding: .9rem 1.1rem; margin-bottom: .6rem; background: #fff; }
+        .trouble summary { font-weight: 600; cursor: pointer; color: #1a1a2e; }
+        .trouble p { color: #555; margin-top: .6rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">CPR Studio</a>
+            <ul class="nav-links">
+                <li><a href="../shoptics/">Shoptics</a></li>
+                <li><a href="../privacy.html">Privacy Policy</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="setup-hero">
+            <div class="container">
+                <h1>Shoptics Setup</h1>
+                <p>Connect your Shopify store to Shoptics with a <strong>custom app access token</strong> — a secure, revocable key you create inside your own Shopify admin. About 2 minutes, one time.</p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="container">
+                <h2>Why a custom app token instead of "Sign in with Shopify"?</h2>
+                <p class="lead">
+                    Shopify lets every store create its own private <strong>custom app</strong> — a built-in feature designed
+                    exactly for connecting trusted tools. You create the app inside your own admin, choose precisely which
+                    permissions it gets, and Shopify issues a token only you can see. You stay in control: uninstall the
+                    custom app at any time and Shoptics' access dies instantly. Your Shopify password is never involved.
+                </p>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <div class="container">
+                <h2>How we protect your store</h2>
+                <ul class="privacy-list">
+                    <li><strong>Your token is encrypted</strong> (AES-256) at rest on our servers and never appears on your glasses, in logs, or in the app again after you paste it.</li>
+                    <li><strong>Nothing changes in your store without your tap.</strong> The voice agent can only <em>propose</em> actions — every draft order is shown to you in full on your glasses, and only your confirmation tap executes it.</li>
+                    <li><strong>We don't keep your sales data.</strong> Orders are read on demand to answer your question, then discarded — nothing is warehoused beyond a 60-second dashboard cache.</li>
+                    <li><strong>Voice audio is never stored.</strong> It streams from your glasses to our transcription provider and exists only for the seconds it takes to transcribe.</li>
+                    <li><strong>Revoke anytime.</strong> Uninstall the custom app in Shopify, or tap Disconnect in Shoptics — either kills access immediately.</li>
+                </ul>
+                <p style="margin-top: 1.5rem;"><a href="https://shoptics.cprstudios.com/privacy" style="color: #16a34a;">Read the full Shoptics Privacy Policy →</a></p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="container">
+                <h2>Create your access token</h2>
+                <div class="steps">
+                    <div class="step">
+                        <h3>Open your Shopify settings</h3>
+                        <p>In your Shopify admin, go to <strong>Settings → Apps and sales channels</strong>.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Enable custom app development</h3>
+                        <p>Click <strong>Develop apps</strong>, then <strong>Allow custom app development</strong> (Shopify asks you to confirm twice — this just unlocks the feature for your store).</p>
+                    </div>
+                    <div class="step">
+                        <h3>Create the app</h3>
+                        <p>Click <strong>Create an app</strong> and name it <code>Shoptics</code>. The app developer is you.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Grant the four permissions</h3>
+                        <p>Open <strong>Configure Admin API scopes</strong> and check exactly these four:</p>
+                        <div class="scopes">
+                            <code>read_orders</code>
+                            <code>read_products</code>
+                            <code>read_customers</code>
+                            <code>write_draft_orders</code>
+                        </div>
+                        <p style="margin-top:.6rem;">Then click <strong>Save</strong>. These let Shoptics read your sales numbers and create the draft orders you confirm — nothing more. It cannot touch payouts, settings, themes, or published orders.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Install the app and reveal your token</h3>
+                        <p>Go to the <strong>API credentials</strong> tab, click <strong>Install app</strong>, then <strong>Reveal token once</strong>. Copy the token — it starts with <code>shpat_</code>. Shopify only shows it one time.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Paste it into Shoptics</h3>
+                        <p>Open Shoptics in the Even Realities app on your phone. Enter your store domain (like <code>your-store.myshopify.com</code>) and paste the token, then tap <strong>Connect</strong>. Shoptics verifies everything instantly.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Put on your glasses</h3>
+                        <p>Launch Shoptics from your G2. Your live dashboard appears — tap once to ask your store anything.</p>
+                    </div>
+                </div>
+                <div class="note">
+                    <strong>Heads up:</strong> the token is shown by Shopify only once. If you lose it, no problem — uninstall the custom app and reinstall it to generate a fresh one, then reconnect in Shoptics.
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section" style="padding-top: 0;">
+            <div class="container">
+                <h2>Troubleshooting</h2>
+                <div class="trouble">
+                    <details>
+                        <summary>"Your custom app is missing API scopes"</summary>
+                        <p>One of the four permissions wasn't checked before installing. Go back to your custom app → <strong>Configuration</strong> → edit Admin API scopes, check the missing one (Shoptics tells you which), save, then open <strong>API credentials</strong> and uninstall/reinstall the app to mint a new token. Paste the new token into Shoptics.</p>
+                    </details>
+                    <details>
+                        <summary>"Shopify rejected that token"</summary>
+                        <p>Usually a copy/paste miss — the token must start with <code>shpat_</code> and be copied in full. Reveal-once means a previously viewed token can't be re-copied; reinstall the custom app for a fresh one.</p>
+                    </details>
+                    <details>
+                        <summary>"Enter your .myshopify.com store domain"</summary>
+                        <p>Use your store's <em>internal</em> domain (find it under Settings → Domains), not your custom storefront domain. It looks like <code>your-store.myshopify.com</code>.</p>
+                    </details>
+                </div>
+                <p style="margin-top: 1.5rem;">Still stuck? Email <a href="mailto:support@cprstudios.com" style="color: #16a34a;">support@cprstudios.com</a> — we'll get you running.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CPR Studio. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
